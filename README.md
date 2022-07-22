@@ -73,12 +73,13 @@ page on the EFIDroid wiki for an exact mapping of LK targets to SoCs.
 - Samsung Galaxy A7 (2015) - SM-A700YD
 - Samsung Galaxy Ace 4 - SM-G357FZ (quirky - see comment in `dts/msm8916/msm8916-samsung-r02.dts`)
 - Samsung Galaxy Core Max - SM-G5108Q (quirky - see comment in `dts/msm8916/msm8916-samsung-r08.dts`)
-- Samsung Galaxy Core Prime LTE - SM-G360F
+- Samsung Galaxy Core Prime LTE - SM-G360F, SM-G360G (rossaltezt is quirky - see comment in `dts/msm8916/msm8916-samsung-r03.dts`)
 - Samsung Galaxy E7 - SM-E7000
+- Samsung Galaxy Grand Max - SM-G720AX
 - Samsung Galaxy Grand Prime - SM-G530FZ, SM-G530H, SM-G530W, SM-G530Y (G530Y is quirky - see comment in `dts/msm8916/msm8916-samsung-r11.dts`)
 - Samsung Galaxy J3 (2016) - SM-J3109, SM-J320YZ
 - Samsung Galaxy J3 Pro - SM-J3110, SM-J3119
-- Samsung Galaxy J5 (2015) - SM-J5008, SM-J500F, SM-J500FN, SM-J500H, SM-J500M
+- Samsung Galaxy J5 (2015) - SM-J5007, SM-J5008, SM-J500F, SM-J500FN, SM-J500H, SM-J500M
 - Samsung Galaxy J5 (2016) - SM-J5108, SM-J510F, SM-J510FN, SM-J510UN
 - Samsung Galaxy J7 (2015) - SM-J7008, SM-J700P
 - Samsung Galaxy On7 (2015) - SM-G6000
@@ -102,9 +103,11 @@ page on the EFIDroid wiki for an exact mapping of LK targets to SoCs.
 
 ### lk2nd-msm8226
 - ASUS ZenWatch 2 - sparrow
+- Huawei Ascend G6 4G - G6-L11 (quirky - see comment in `dts/msm8226/msm8926-huawei-g6-l11-vb.dts`)
 - Huawei Watch - sturgeon
 - LG G Watch R - lenok
 - Samsung Galaxy Grand 2 - SM-G7102
+- Samsung Galaxy Tab 4 10.1 (2014) - SM-T530
 
 ## Installation
 1. Download `lk2nd.img` (available in [Releases](https://github.com/msm8916-mainline/lk2nd/releases))
@@ -153,8 +156,15 @@ $ make TOOLCHAIN_PREFIX=arm-none-eabi- lk2nd-msmXXXX
 **Requirements:**
 - ARM (32 bit) GCC tool chain
   - Arch Linux: `arm-none-eabi-gcc`
+  - Debian and Ubuntu: `gcc-arm-none-eabi`
+  - Fedora: `arm-none-eabi-gcc-cs`
 - [Device Tree Compiler](https://git.kernel.org/pub/scm/utils/dtc/dtc.git)
   - Arch Linux: `dtc`
+  - Debian and Ubuntu: `device-tree-compiler`
+  - Fedora: `dtc`
+- libfdt
+  - Debian and Ubuntu: `libfdt-dev`
+  - Fedora: `libfdt-devel`
 
 Replace `TOOLCHAIN_PREFIX` with the path to your tool chain.
 `lk2nd.img` is built and placed into `build-lk2nd-msmXXXX/lk2nd.img`.
